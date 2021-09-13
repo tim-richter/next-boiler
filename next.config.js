@@ -4,6 +4,13 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 const i18n = require('./next-i18next.config');
 
-module.exports = withPlugins([withBundleAnalyzer], {
+// @ts-check
+
+/**
+ * @type {import('next').NextConfig}
+ */
+const nextConfig = {
   ...i18n,
-});
+};
+
+module.exports = withPlugins([withBundleAnalyzer], nextConfig);

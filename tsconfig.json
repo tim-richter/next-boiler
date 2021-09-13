@@ -51,6 +51,12 @@
       ],
       "@types": [
         "src/types"
+      ],
+      "@config/*": [
+        "src/config/*"
+      ],
+      "@config": [
+        "src/config"
       ]
     }
   },

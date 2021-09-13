@@ -6,8 +6,8 @@ import Container from '@components/container';
 import Main from '@components/main';
 import SWRExample from '@components/examples/swr';
 import { GetStaticProps } from 'next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import I18NExampleComponent from '@components/examples/translate';
+import { baseStaticHandler } from '../util/getProps';
 
 const Home: React.FC = () => {
   return (
@@ -22,12 +22,8 @@ const Home: React.FC = () => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale as string, ['common', 'home'])),
-    },
-  };
-};
+export const getStaticProps: GetStaticProps = baseStaticHandler({
+  translationNamespaces: ['common', 'home'],
+});
 
 export default Home;
