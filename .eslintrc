@@ -1,7 +1,28 @@
 {
     "root": true,
     "parser": "@typescript-eslint/parser",
-    "plugins": ["@typescript-eslint"],
+    "parserOptions": {
+        "project": ["./tsconfig.json"],
+        "sourceType": "module",
+        "createDefaultProgram": true
+    },
+    "plugins": ["@typescript-eslint", "prettier"],
+    "env": {
+        "node": true,
+        "browser": true,
+        "amd": true,
+        "jest": true
+    },
+    "extends": [
+        "airbnb",
+        "airbnb-typescript",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:cypress/recommended",
+        "plugin:prettier/recommended",
+        "plugin:@next/next/recommended"
+    ],
     "overrides": [
         {
             "files": ["*.js"],
@@ -10,16 +31,8 @@
             }
         }
     ],
-    "env": {
-        "node": true,
-        "browser": true,
-        "amd": true
-    },
-    "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended",
-        "prettier/@typescript-eslint",
-        "plugin:prettier/recommended"
-    ]
+    "rules": {
+        "prettier/prettier": 2,
+        "react/jsx-props-no-spreading": 1
+    }
 }

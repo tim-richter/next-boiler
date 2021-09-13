@@ -1,0 +1,10 @@
+{
+    "hello": "Hallo",
+    "greet": "Hallo, {{name}}!",
+    "world": "Welt",
+    "documentation": "Zur Dokumentation",
+    "language": {
+        "tr": "🇹🇷 Türkisch",
+        "en": "🇺🇸 Englisch"
+    }
+}

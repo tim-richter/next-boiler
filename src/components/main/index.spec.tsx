@@ -1,24 +1,25 @@
-import { render } from "@test";
+import React from 'react';
+import { render } from '@test';
 
-import { Main } from "./index";
+import Main from './index';
 
-describe("Main component testing with testing-library", () => {
-    it("renders without crashing", () => {
-        const component = render(<Main />);
+describe('Main component testing with testing-library', () => {
+  it('renders without crashing', () => {
+    const component = render(<Main />);
 
-        expect(component).toBeTruthy();
-    });
+    expect(component).toBeTruthy();
+  });
 
-    it("renders texts successfuly", () => {
-        const { getByText } = render(<Main />);
+  it('renders texts successfuly', () => {
+    const { getByText } = render(<Main />);
 
-        getByText("superplate");
-        getByText("The frontend boilerplate with superpowers!");
-    });
+    getByText('superplate');
+    getByText('The frontend boilerplate with superpowers!');
+  });
 
-    it("renders button successfuly", () => {
-        const { getByText } = render(<Main />);
+  it('renders button successfuly', () => {
+    const { getByText } = render(<Main />);
 
-        getByText("Docs");
-    });
+    getByText('Docs');
+  });
 });

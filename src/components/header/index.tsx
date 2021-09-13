@@ -1,11 +1,13 @@
-import React from "react";
+import React from 'react';
 
-import { Logo } from "@components";
+import Logo from '@components/logo';
 
-export const Header: React.FC = () => {
-    return (
-        <div className="text-center bg-gray-800" data-testid="container">
-            <Logo />
-        </div>
-    );
+const Header: React.FC = () => {
+  return (
+    <div className="text-center bg-gray-800" data-testid="container">
+      <Logo />
+    </div>
+  );
 };
+
+export default Header;
