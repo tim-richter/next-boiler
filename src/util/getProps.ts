@@ -9,6 +9,7 @@ import { NextApiRequestCookies } from 'next/dist/server/api-utils';
 import { ParsedUrlQuery } from 'querystring';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import config from '@config';
+import { SSRConfig } from 'next-i18next';
 
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 
@@ -90,8 +91,26 @@ interface BaseStaticHandlerContext {
 
 interface BaseStaticHandlerConfig {
   translationNamespaces?: string[];
+  meta: {
+    title: string;
+    description: string;
+  };
   revalidate?: number;
 }
+
+interface BaseStaticHandlerReturn {
+  language: string;
+  preview: true | null;
+  previewRef: string | null;
+  translations: SSRConfig;
+  meta: any;
+}
+
+type ICustomLogic = (
+  context: BaseStaticHandlerContext,
+) =>
+  | Promise<GetStaticPropsResult<Record<string, any>>>
+  | GetStaticPropsResult<Record<string, any>>;
 
 /**
  * Provides basic handling of getStaticProps Logic.
@@ -99,13 +118,17 @@ interface BaseStaticHandlerConfig {
  * @param customLogic Custom Fetch Logic
  */
 export const baseStaticHandler =
-  <T extends Record<string, any>>(
-    props: BaseStaticHandlerConfig | null,
-    customLogic?: (
-      context: BaseStaticHandlerContext,
-    ) => Promise<GetStaticPropsResult<T>> | GetStaticPropsResult<T>,
+  <CustomLogic extends ICustomLogic | undefined>(
+    props: BaseStaticHandlerConfig,
+    customLogic?: CustomLogic,
   ) =>
-  async (ctx: GetStaticPropsContext): Promise<GetStaticPropsResult<any>> => {
+  async (
+    ctx: GetStaticPropsContext,
+  ): Promise<
+    CustomLogic extends ICustomLogic
+      ? GetStaticPropsResult<Record<string, any> & BaseStaticHandlerReturn>
+      : GetStaticPropsResult<BaseStaticHandlerReturn>
+  > => {
     const { preview, previewData, locale, params } = ctx;
 
     const previewRef = typeof previewData === 'string' ? previewData : null;
@@ -142,9 +165,10 @@ export const baseStaticHandler =
             preview: preview || null,
             previewRef,
             ...translations,
+            meta: props.meta,
           },
           revalidate: props?.revalidate || false,
-        };
+        } as any;
       }
 
       return { notFound: true };
@@ -156,7 +180,8 @@ export const baseStaticHandler =
         preview: preview || null,
         previewRef,
         ...translations,
+        meta: props.meta,
       },
       revalidate: props?.revalidate || false,
-    };
+    } as any;
   };
