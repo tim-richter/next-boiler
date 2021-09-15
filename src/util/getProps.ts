@@ -105,7 +105,7 @@ export const baseStaticHandler =
       context: BaseStaticHandlerContext,
     ) => Promise<GetStaticPropsResult<T>> | GetStaticPropsResult<T>,
   ) =>
-  async (ctx: GetStaticPropsContext) => {
+  async (ctx: GetStaticPropsContext): Promise<GetStaticPropsResult<any>> => {
     const { preview, previewData, locale, params } = ctx;
 
     const previewRef = typeof previewData === 'string' ? previewData : null;

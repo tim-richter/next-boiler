@@ -1,3 +1,5 @@
+const { TsconfigPathsPlugin } = require("tsconfig-paths-webpack-plugin");
+
 module.exports = {
     stories: [
         "../src/**/*.stories.mdx",
@@ -9,7 +11,11 @@ module.exports = {
         "@storybook/addon-controls",
         "@storybook/addon-knobs",
     ],
-    webpackFinal: async (config) => {
-        return config;
-    },
+  webpackFinal: async (config) => {
+    [].push.apply(config.resolve.plugins, [
+      new TsconfigPathsPlugin({extensions: config.resolve.extensions})
+    ]);
+
+    return config;
+  }
 };

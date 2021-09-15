@@ -7,6 +7,8 @@ import Main from '@components/main';
 import SWRExample from '@components/examples/swr';
 import { GetStaticProps } from 'next';
 import I18NExampleComponent from '@components/examples/translate';
+import Text from '@components/Text';
+import Accordion from '@components/Accordion';
 import { baseStaticHandler } from '../util/getProps';
 
 const Home: React.FC = () => {
@@ -14,6 +16,22 @@ const Home: React.FC = () => {
     <Container>
       <Header />
       <Main />
+      <Text size={1}>Hi this is stitches!</Text>
+      <Accordion
+        defaultValue="value-1"
+        data={[
+          {
+            content: 'Testi Test',
+            trigger: 'This is a test',
+            value: 'value-1',
+          },
+          {
+            content: 'Testi Test',
+            trigger: 'Another test',
+            value: 'value-2',
+          },
+        ]}
+      />
       <Cards />
       <Footer />
       <SWRExample />
