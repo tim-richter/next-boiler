@@ -10,6 +10,7 @@ import { ParsedUrlQuery } from 'querystring';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import config from '@config';
 import { SSRConfig } from 'next-i18next';
+import { SEOMeta } from '@types';
 
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 
@@ -89,14 +90,9 @@ interface BaseStaticHandlerContext {
   language: string;
 }
 
-interface Meta {
-  title: string;
-  description: string;
-}
-
 interface BaseStaticHandlerConfig {
   translationNamespaces?: string[];
-  meta: Meta;
+  meta: SEOMeta;
   revalidate?: number;
 }
 
@@ -105,7 +101,7 @@ interface BaseStaticHandlerReturn {
   preview: true | null;
   previewRef: string | null;
   translations: SSRConfig;
-  meta: Meta;
+  meta: SEOMeta;
 }
 
 type ICustomLogic<T extends unknown> = (

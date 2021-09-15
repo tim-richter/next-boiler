@@ -12,13 +12,11 @@ export const getStaticProps = baseStaticHandler({
   },
 });
 
-const Home = ({
-  language,
-  translations,
-  meta,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+type Props = InferGetStaticPropsType<typeof getStaticProps>;
+
+const Home = ({ language, translations, meta }: Props) => {
   return (
-    <Page>
+    <Page meta={meta}>
       <Text size={1}>Hi this is stitches!</Text>
     </Page>
   );
