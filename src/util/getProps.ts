@@ -89,12 +89,14 @@ interface BaseStaticHandlerContext {
   language: string;
 }
 
+interface Meta {
+  title: string;
+  description: string;
+}
+
 interface BaseStaticHandlerConfig {
   translationNamespaces?: string[];
-  meta: {
-    title: string;
-    description: string;
-  };
+  meta: Meta;
   revalidate?: number;
 }
 
@@ -103,14 +105,12 @@ interface BaseStaticHandlerReturn {
   preview: true | null;
   previewRef: string | null;
   translations: SSRConfig;
-  meta: any;
+  meta: Meta;
 }
 
-type ICustomLogic = (
+type ICustomLogic<T extends unknown> = (
   context: BaseStaticHandlerContext,
-) =>
-  | Promise<GetStaticPropsResult<Record<string, any>>>
-  | GetStaticPropsResult<Record<string, any>>;
+) => Promise<GetStaticPropsResult<T>> | GetStaticPropsResult<T>;
 
 /**
  * Provides basic handling of getStaticProps Logic.
@@ -118,15 +118,15 @@ type ICustomLogic = (
  * @param customLogic Custom Fetch Logic
  */
 export const baseStaticHandler =
-  <CustomLogic extends ICustomLogic | undefined>(
+  <T extends Record<string, any> | undefined>(
     props: BaseStaticHandlerConfig,
-    customLogic?: CustomLogic,
+    customLogic?: ICustomLogic<T>,
   ) =>
   async (
     ctx: GetStaticPropsContext,
   ): Promise<
-    CustomLogic extends ICustomLogic
-      ? GetStaticPropsResult<Record<string, any> & BaseStaticHandlerReturn>
+    T extends Record<string, any>
+      ? GetStaticPropsResult<T & BaseStaticHandlerReturn>
       : GetStaticPropsResult<BaseStaticHandlerReturn>
   > => {
     const { preview, previewData, locale, params } = ctx;
