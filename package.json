@@ -4,14 +4,19 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "start": "next start",
+    "release": "npx semantic-release",
+
     "build": "next build",
     "build:analyze": "ANALYZE=true npm run build",
-    "start": "next start",
+
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
+
     "lint": "run-s lint:tsc lint:eslint",
     "lint:eslint": "eslint '**/*.{js,jsx,ts,tsx}'",
     "lint:tsc": "tsc --noEmit --diagnostics",
+
     "test": "jest -c test/jest.config.js",
     "e2e:open": "cypress open",
     "e2e:run": "cypress run --config video=false",
@@ -47,6 +52,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.1",
     "@storybook/addon-actions": "^6.1.14",
     "@storybook/addon-essentials": "^6.1.14",
     "@storybook/addon-knobs": "^6.1.14",

@@ -4,11 +4,9 @@ on:
     push:
         branches:
             - main
-            - master
     pull_request:
         branches:
             - main
-            - master
 
 jobs:
     ci:
@@ -52,3 +50,8 @@ jobs:
 
             - name: Run e2e test
               run: yarn cypress:test
+
+            - name: Release
+              run: yarn run release
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
