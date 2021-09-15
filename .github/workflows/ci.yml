@@ -64,7 +64,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: next-build
-          path: .next/
+          path: .next
 
   e2e:
     name: 🧪 End To End Tests
@@ -85,6 +85,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: next-build
+          path: .next
       - name: Run e2e test
         run: yarn e2e:test
 
