@@ -1,4 +1,4 @@
-name: ci
+name: 🚀 Release
 
 on:
   push:
@@ -9,57 +9,100 @@ on:
           - main
 
 jobs:
-  ci:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-          os: [ubuntu-latest]
-          node: [14]
-
+  lint:
+    name: 🔎 Lint
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@master
-
       - name: Setup node env
         uses: actions/setup-node@v2.1.2
         with:
-          node-version: ${{ matrix.node }}
-
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Cache node_modules
-        uses: actions/cache@v2
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-              ${{ runner.os }}-yarn-
-
+          node-version: 14
+      - uses: c-hive/gha-yarn-cache@v2
       - name: Install dependencies
         run: yarn
-
       - name: Run lint
         run: yarn lint
 
+  test:
+    name: 🧪 Unit Tests
+    runs-on: ubuntu-latest
+    needs:
+      - lint
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Setup node env
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: 14
+      - uses: c-hive/gha-yarn-cache@v2
+      - name: Install dependencies
+        run: yarn
       - name: Run tests
         run: yarn test
 
+  build:
+    name: 📦 Build Next.js
+    runs-on: ubuntu-latest
+    needs:
+      - test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Setup node env
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: 14
+      - uses: c-hive/gha-yarn-cache@v2
+      - name: Install dependencies
+        run: yarn
       - name: Build Next.js
         run: yarn build
-
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
         with:
           name: next-build
           path: .next/
 
+  e2e:
+    name: 🧪 End To End Tests
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Setup node env
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: 14
+      - uses: c-hive/gha-yarn-cache@v2
+      - name: Install dependencies
+        run: yarn
+      - name: Download a single artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: next-build
       - name: Run e2e test
         run: yarn e2e:test
 
+  release:
+    name: 🚀 Release
+    needs:
+      - e2e
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Setup node env
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: 14
+      - uses: c-hive/gha-yarn-cache@v2
+      - name: Install dependencies
+        run: yarn
       - name: Release
         run: yarn release
         env:
