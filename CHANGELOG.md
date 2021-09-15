@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/tim-richter/next-boiler/compare/v1.0.0...v1.1.0) (2021-09-15)
+
+
+### Bug Fixes
+
+* download artifact path ([48a4d6a](https://github.com/tim-richter/next-boiler/commit/48a4d6a0b521fe8ee61fa6e38c0eb567a7d5599a))
+
+
+### Features
+
+* put seperate ci steps into jobs ([ae8ca93](https://github.com/tim-richter/next-boiler/commit/ae8ca934c5dcd21732df790d8a41285da21dfaa4))
+
 # 1.0.0 (2021-09-15)
 
 
