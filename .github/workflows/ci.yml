@@ -47,7 +47,7 @@ jobs:
     name: 📦 Build Next.js
     runs-on: ubuntu-latest
     needs:
-      - test
+      - lint
     steps:
       - name: Checkout
         uses: actions/checkout@master
@@ -93,6 +93,7 @@ jobs:
     name: 🚀 Release
     needs:
       - e2e
+      - test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
