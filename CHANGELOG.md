@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/tim-richter/next-boiler/compare/v1.1.0...v1.1.1) (2021-09-15)
+
+
+### Bug Fixes
+
+* run test jobs in parallel ([1b5ef82](https://github.com/tim-richter/next-boiler/commit/1b5ef82de8a8eacc8110f91b1aee59e6b97e008e))
+
 # [1.1.0](https://github.com/tim-richter/next-boiler/compare/v1.0.0...v1.1.0) (2021-09-15)
 
 
