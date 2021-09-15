@@ -1,3 +1,16 @@
+# [1.2.0](https://github.com/tim-richter/next-boiler/compare/v1.1.1...v1.2.0) (2021-09-15)
+
+
+### Bug Fixes
+
+* infer props types of baseStaticHandler ([821e74a](https://github.com/tim-richter/next-boiler/commit/821e74ab9143a4a9f35f2641dab8cef52a9ae183))
+
+
+### Features
+
+* add next-seo ([69e587c](https://github.com/tim-richter/next-boiler/commit/69e587c226fa92c08d1a4a9ad6f44318efbb85f6))
+* add typings for getStaticProps ([f634c62](https://github.com/tim-richter/next-boiler/commit/f634c621a41be446a6720ed78daf661b67f583c2))
+
 ## [1.1.1](https://github.com/tim-richter/next-boiler/compare/v1.1.0...v1.1.1) (2021-09-15)
 
 
