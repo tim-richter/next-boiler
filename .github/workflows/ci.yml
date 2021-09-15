@@ -48,6 +48,15 @@ jobs:
       - name: Run tests
         run: yarn test
 
+      - name: Build Next.js
+        run: yarn build
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: next-build
+          path: .next/
+
       - name: Run e2e test
         run: yarn e2e:test
 
