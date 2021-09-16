@@ -16,7 +16,8 @@
     "test": "jest -c test/jest.config.js",
     "e2e:open": "cypress open",
     "e2e:run": "cypress run --config video=false",
-    "e2e:test": "start-server-and-test start http://localhost:3000 e2e:run"
+    "e2e:test": "start-server-and-test start http://localhost:3000 e2e:run",
+    "ci:test-build": "run-s lint test build e2e:test"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
