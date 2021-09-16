@@ -1,4 +1,4 @@
-<div style="text-align: center"><h1>Next Boiler</h1></div>
+<div align="center"><h1>Next Boiler</h1></div>
 
 <h4 align="center">An opionated [NextJS](https://nextjs.org) Boilerplate written in Typescript.</h4>
 
