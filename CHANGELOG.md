@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/tim-richter/next-boiler/compare/v1.2.0...v1.3.0) (2021-09-16)
+
+
+### Features
+
+* add new script to package.json to run all ci steps in one command ([99b4fc2](https://github.com/tim-richter/next-boiler/commit/99b4fc271db3401adbbf55b1769ecc533440fb58))
+
 # [1.2.0](https://github.com/tim-richter/next-boiler/compare/v1.1.1...v1.2.0) (2021-09-15)
 
 
