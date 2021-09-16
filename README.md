@@ -1,6 +1,6 @@
 <div align="center"><h1>Next Boiler</h1></div>
 
-<h4 align="center">An opionated [NextJS](https://nextjs.org) Boilerplate written in Typescript.</h4>
+<h4 align="center">An opionated <a href="https://nextjs.org">NextJS</a> Boilerplate written in Typescript.</h4>
 
 <p align="center">
   <a href="https://github.com/tim-richter/next-boiler/releases/latest" aria-label="Latest Release Link">
