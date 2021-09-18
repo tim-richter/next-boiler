@@ -1,6 +1,5 @@
 import { keyframes, style } from '@vanilla-extract/css';
 import { sprinkles } from '@styles/sprinkles.css';
-import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import theme from '@styles/theme.css';
 
 export const slideDown = keyframes({
@@ -67,7 +66,7 @@ export const trigger = style([
     fontSize: 1,
     lineHeight: 1,
     color: 'purple-700',
-    background: 'white',
+    background: 'black',
     boxShadow: 'light',
   }),
   {
