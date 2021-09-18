@@ -1,47 +1,53 @@
 {
-    "root": true,
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "project": ["./tsconfig.json"],
-        "sourceType": "module",
-        "createDefaultProgram": true
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["./tsconfig.json"],
+    "sourceType": "module",
+    "createDefaultProgram": true
+  },
+  "plugins": ["@typescript-eslint", "prettier"],
+  "env": {
+    "node": true,
+    "browser": true,
+    "amd": true,
+    "jest": true
+  },
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:cypress/recommended",
+    "plugin:prettier/recommended",
+    "plugin:@next/next/recommended"
+  ],
+  "overrides": [
+    {
+      "files": ["_app.tsx"],
+      "rules": {
+        "react/jsx-props-no-spreading": 0
+      }
     },
-    "plugins": ["@typescript-eslint", "prettier"],
-    "env": {
-        "node": true,
-        "browser": true,
-        "amd": true,
-        "jest": true
+    {
+      "files": ["*.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": 0
+      }
     },
-    "extends": [
-        "airbnb",
-        "airbnb-typescript",
-        "eslint:recommended",
-        "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:cypress/recommended",
-        "plugin:prettier/recommended",
-        "plugin:@next/next/recommended"
-    ],
-    "overrides": [
-        {
-          "files": ["*.tsx"],
-          "rules": {
-            "@typescript-eslint/explicit-module-boundary-types": 0
-        }
-      },
-        {
-            "files": ["*.js"],
-            "rules": {
-                "@typescript-eslint/no-var-requires": "off"
-            }
-        }
-    ],
-    "rules": {
-        "prettier/prettier": 2,
-        "react/jsx-props-no-spreading": 1,
-        "react/prop-types": 0,
-        "react/require-default-props": 0,
-        "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.{js,jsx,ts,tsx}", "**/*.spec.{js,jsx,ts,tsx}", "**/*.stories.{js,jsx,ts,tsx}", "test/**/*"]}]
+    {
+      "files": ["*.js"],
+      "rules": {
+          "@typescript-eslint/no-var-requires": "off"
+      }
     }
+  ],
+  "rules": {
+    "prettier/prettier": 2,
+    "react/jsx-props-no-spreading": 1,
+    "react/prop-types": 0,
+    "react/require-default-props": 0,
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.{js,jsx,ts,tsx}", "**/*.spec.{js,jsx,ts,tsx}", "**/*.stories.{js,jsx,ts,tsx}", "test/**/*"]}]
+  }
 }

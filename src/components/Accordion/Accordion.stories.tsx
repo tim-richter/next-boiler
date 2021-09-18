@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import Accordion, { AccordionProps } from '@components/Accordion';
+import Accordion, { AccordionProps } from '@components/Accordion/Accordion';
 
 export default {
   component: Accordion,
