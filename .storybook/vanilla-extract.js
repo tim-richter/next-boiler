@@ -3,9 +3,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { TsconfigPathsPlugin } = require("tsconfig-paths-webpack-plugin");
 
 module.exports = {
-  managerWebpack: async (config, options) => {
-    // Update config here
-    return config;
+  managerWebpack: async (baseConfig, options) => {
+    return baseConfig;
   },
   managerBabel: async (config, options) => {
     // Update config here
@@ -33,12 +32,11 @@ module.exports = {
       module: {
         ...module,
         rules: [
-          ...(module.rules || []),
+          ...(module.rules && module.rules.filter(rule => !rule?.test?.test('test.css')) || []),
           {
-            test: /\.css$/i,
-            sideEffects: true,
+            test: /\.css$/,
             use: [MiniCssExtractPlugin.loader, 'css-loader'],
-          }
+          },
         ]
       }
     }
