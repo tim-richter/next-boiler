@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/tim-richter/next-boiler/compare/v1.3.0...v1.4.0) (2021-09-18)
+
+
+### Features
+
+* add component tests ([52f7dda](https://github.com/tim-richter/next-boiler/commit/52f7ddad4e123450697dbb535bb3f27ae4e63cee))
+
 # [1.3.0](https://github.com/tim-richter/next-boiler/compare/v1.2.0...v1.3.0) (2021-09-16)
 
 
