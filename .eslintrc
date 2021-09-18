@@ -48,6 +48,6 @@
     "react/jsx-props-no-spreading": 1,
     "react/prop-types": 0,
     "react/require-default-props": 0,
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.{js,jsx,ts,tsx}", "**/*.spec.{js,jsx,ts,tsx}", "**/*.stories.{js,jsx,ts,tsx}", "test/**/*"]}]
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.{js,jsx,ts,tsx}", "**/*.spec.{js,jsx,ts,tsx}", "**/*.stories.{js,jsx,ts,tsx}", "test/**/*", "cypress/**/*"]}]
   }
 }
