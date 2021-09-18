@@ -1,8 +1,11 @@
 import nock from 'nock';
 import dotenv from 'dotenv';
 import '@vanilla-extract/css/disableRuntimeStyles';
+import { toHaveNoViolations } from 'jest-axe';
 
 dotenv.config({ path: '.env.test' });
+
+expect.extend(toHaveNoViolations);
 
 afterAll(() => {
   nock.cleanAll();

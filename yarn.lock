@@ -3645,6 +3645,14 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
+"@types/jest-axe@^3.5.2":
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/@types/jest-axe/-/jest-axe-3.5.2.tgz#00924237586f49a1a8660ab849d1a6f34dcae1ce"
+  integrity sha512-5esefQ7hTfZ7i5H2ra8n4oiHeI0Uo7ZUI+71R4qosm+ZLabmlHj6sf20KPcM8bgz9xJV4oUwzA+koE/1lkupQQ==
+  dependencies:
+    "@types/jest" "*"
+    axe-core "^3.5.5"
+
 "@types/jest@*", "@types/jest@^27.0.1":
   version "27.0.1"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-27.0.1.tgz#fafcc997da0135865311bb1215ba16dba6bdf4ca"
@@ -4883,6 +4891,11 @@ axe-core@4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.2.1.tgz#2e50bcf10ee5b819014f6e342e41e45096239e34"
   integrity sha512-evY7DN8qSIbsW2H/TWQ1bX3sXN1d4MNb5Vb4n7BzPuCwRHdkZ1H2eNLuSh73EoQqkGKUtju2G2HCcjCfhvZIAA==
+
+axe-core@^3.5.5:
+  version "3.5.6"
+  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-3.5.6.tgz#e762a90d7f6dbd244ceacb4e72760ff8aad521b5"
+  integrity sha512-LEUDjgmdJoA3LqklSTwKYqkjcZ4HKc4ddIYGSAiSkr46NTjzg2L9RNB+lekO9P7Dlpa87+hBtzc2Fzn/+GUWMQ==
 
 axe-core@^4.0.2, axe-core@^4.2.0:
   version "4.3.3"
@@ -9557,6 +9570,16 @@ javascript-stringify@^2.0.1:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/javascript-stringify/-/javascript-stringify-2.1.0.tgz#27c76539be14d8bd128219a2d731b09337904e79"
   integrity sha512-JVAfqNPTvNq3sB/VHQJAFxN/sPgKnsKrCwyRt15zwNCdrMMJDdcEOdubuy+DuJYYdm0ox1J4uzEuYKkN+9yhVg==
+
+jest-axe@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/jest-axe/-/jest-axe-5.0.1.tgz#26c43643b2e5f2bd4900c1ab36f8283635957a6e"
+  integrity sha512-MMOWA6gT4pcZGbTLS8ZEqABH08Lnj5bInfLPpn9ADWX2wFF++odbbh8csmSfkwKjHaioVPzlCtIypAtxFDx/rw==
+  dependencies:
+    axe-core "4.2.1"
+    chalk "4.1.0"
+    jest-matcher-utils "27.0.2"
+    lodash.merge "4.6.2"
 
 jest-changed-files@^27.1.1:
   version "27.1.1"

@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
+import { axe } from 'jest-axe';
 import { Primary } from './Accordion.stories';
 
 describe('Primary State', () => {
@@ -9,6 +10,12 @@ describe('Primary State', () => {
   it('renders all accordions', () => {
     render(<Primary {...args} />);
     expect(screen.getAllByRole('button').length).toEqual(4);
+  });
+
+  it('should not have a11y violations', async () => {
+    const { container } = render(<Primary {...args} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });
 
