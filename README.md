@@ -11,29 +11,31 @@
   </a>
 </p>
 
-<p align="center">
-  <a href="#key-features">Key Features</a> •
-  <a href="#how-to-use">How To Use</a>
-</p>
-
 <div align="center">
   <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ftim-richter%2Fnext-boiler">
     <img src="https://vercel.com/button" alt="Button with Vercel Logo and Deploy text">
   </a>
 </div>
 
+<p align="center">
+  <a href="#key-features">Key Features</a> •
+  <a href="#how-to-use">How To Use</a>
+</p>
+
 ## Key Features
 
 * Typescript
-* Styling with near-zero runtime CSS-in-JS Solution [Stitches](https://stitches.dev/docs/introduction) and [Radix-UI](https://www.radix-ui.com/)
+* Styling with zero runtime CSS-in-JS Solution [Vanilla-Extract](https://github.com/seek-oss/vanilla-extract)
 * [Storybook](https://storybook.js.org/docs/react/get-started/introduction) for developing components in isolation
 * Unit/Component Tests with [jest](https://jestjs.io/) and [testing-library](https://testing-library.com/docs/react-testing-library/intro)
 * End-to-End Tests with [cypress](https://docs.cypress.io/guides/overview/why-cypress#In-a-nutshell)
 * Written with best practices in mind
   - Helper functions with sensible defaults for getServerSideProps/getStaticProps
   - Ready to use layouts for all pages
+  - Accessibility with [Radix-UI](https://www.radix-ui.com/)
   - i18n-ready with [next-i18next](https://github.com/isaachinman/next-i18next)
   - Easy SEO with [next-seo](https://github.com/garmeeh/next-seo) on every page
+  - Zero-config PWA with [next-offline](https://github.com/hanford/next-offline)
   - [Eslint](https://eslint.org/) / [Prettier](https://prettier.io/) for code styling
   - [Husky](https://typicode.github.io/husky/#/) and [Lint-staged](https://github.com/okonet/lint-staged) for enforcing code style on every commit
   - Fully Automatic Version Management with [semantic-release](https://github.com/semantic-release/semantic-release)
