@@ -25,7 +25,7 @@
   ],
   "overrides": [
     {
-      "files": ["_app.tsx"],
+      "files": ["_app.tsx", "*.stories.tsx", "*.test.tsx"],
       "rules": {
         "react/jsx-props-no-spreading": 0
       }

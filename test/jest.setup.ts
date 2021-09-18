@@ -1,5 +1,6 @@
 import nock from 'nock';
 import dotenv from 'dotenv';
+import '@vanilla-extract/css/disableRuntimeStyles';
 
 dotenv.config({ path: '.env.test' });
 

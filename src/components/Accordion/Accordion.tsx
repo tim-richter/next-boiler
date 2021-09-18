@@ -44,23 +44,27 @@ export const Accordion = ({
   data,
   defaultValue,
   type = 'single',
-}: AccordionProps) => (
-  <AccordionPrimitive.Accordion
-    type={type}
-    defaultValue={defaultValue}
-    className={styles.accordion}
-  >
-    {data.map((item) => (
-      <AccordionPrimitive.Item
-        value={item.value}
-        key={item.value}
-        className={styles.item}
-      >
-        <AccordionTrigger>{item.trigger}</AccordionTrigger>
-        <AccordionContent>{item.content}</AccordionContent>
-      </AccordionPrimitive.Item>
-    ))}
-  </AccordionPrimitive.Accordion>
-);
+}: AccordionProps) => {
+  if (data.length === 0) return null;
+
+  return (
+    <AccordionPrimitive.Accordion
+      type={type}
+      defaultValue={defaultValue}
+      className={styles.accordion}
+    >
+      {data.map((item) => (
+        <AccordionPrimitive.Item
+          value={item.value}
+          key={item.value}
+          className={styles.item}
+        >
+          <AccordionTrigger>{item.trigger}</AccordionTrigger>
+          <AccordionContent>{item.content}</AccordionContent>
+        </AccordionPrimitive.Item>
+      ))}
+    </AccordionPrimitive.Accordion>
+  );
+};
 
 export default Accordion;
