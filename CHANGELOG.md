@@ -1,3 +1,12 @@
+# [1.5.0](https://github.com/tim-richter/next-boiler/compare/v1.4.0...v1.5.0) (2021-09-18)
+
+
+### Features
+
+* add a11y testing to cypress ([bb76164](https://github.com/tim-richter/next-boiler/commit/bb76164de82ca9ea1379570406c38f226aea32a2))
+* add a11y testing to jest ([ed90ffb](https://github.com/tim-richter/next-boiler/commit/ed90ffbd185a30e7c444fcbc453995a3b2cc4f03))
+* add storybook a11y panel ([64b89bb](https://github.com/tim-richter/next-boiler/commit/64b89bb26be52bef7ce1df81a6c93b8ac447c4a7))
+
 # [1.4.0](https://github.com/tim-richter/next-boiler/compare/v1.3.0...v1.4.0) (2021-09-18)
 
 
