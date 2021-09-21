@@ -46,10 +46,10 @@
       "@test": [
         "test"
       ],
-      "@types/*": [
+      "@customTypes/*": [
         "src/types/*"
       ],
-      "@types": [
+      "@customTypes": [
         "src/types"
       ],
       "@config/*": [

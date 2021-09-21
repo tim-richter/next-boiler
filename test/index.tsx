@@ -4,7 +4,7 @@ import {
   RenderOptions,
   RenderResult,
 } from '@testing-library/react';
-import { WithChildren } from '@types';
+import { WithChildren } from '@customTypes';
 
 /**
  * Custom renderer example with @testing-library/react

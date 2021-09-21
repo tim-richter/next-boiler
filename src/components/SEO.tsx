@@ -1,5 +1,5 @@
 import React from 'react';
-import { SEOMeta } from '@types';
+import { SEOMeta } from '@customTypes';
 import { NextSeo } from 'next-seo';
 
 interface Props {

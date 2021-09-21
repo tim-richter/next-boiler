@@ -10,7 +10,7 @@ import { ParsedUrlQuery } from 'querystring';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import config from '@config';
 import { SSRConfig } from 'next-i18next';
-import { SEOMeta } from '@types';
+import { SEOMeta } from '@customTypes';
 
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 

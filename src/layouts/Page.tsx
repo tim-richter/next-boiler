@@ -1,5 +1,5 @@
 import React from 'react';
-import { SEOMeta, WithChildren } from '@types';
+import { SEOMeta, WithChildren } from '@customTypes';
 import SEO from '@components/SEO';
 import Header from './Header';
 import Main from './Main';
