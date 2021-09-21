@@ -4,6 +4,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin');
 const withOffline = require('next-offline');
+const { withSentryConfig } = require('@sentry/nextjs');
 const i18n = require('./next-i18next.config');
 
 // @ts-check
@@ -41,7 +42,19 @@ const nextConfig = {
 
 const withVanillaExtract = createVanillaExtractPlugin();
 
-module.exports = withPlugins(
+const exports = withPlugins(
   [withOffline, withVanillaExtract, withBundleAnalyzer],
   nextConfig,
 );
+
+const sentryWebpackPluginOptions = {
+  // Additional config options for the Sentry Webpack plugin. Keep in mind that
+  // the following options are set automatically, and overriding them is not
+  // recommended:
+  //   release, url, org, project, authToken, configFile, stripPrefix,
+  //   urlPrefix, include, ignore
+  // For all available options, see:
+  // https://github.com/getsentry/sentry-webpack-plugin#options.
+};
+
+module.exports = withSentryConfig(exports, sentryWebpackPluginOptions);
