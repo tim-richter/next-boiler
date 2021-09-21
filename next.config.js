@@ -42,7 +42,7 @@ const nextConfig = {
 
 const withVanillaExtract = createVanillaExtractPlugin();
 
-const exports = withPlugins(
+const configWithPlugins = withPlugins(
   [withOffline, withVanillaExtract, withBundleAnalyzer],
   nextConfig,
 );
@@ -57,4 +57,7 @@ const sentryWebpackPluginOptions = {
   // https://github.com/getsentry/sentry-webpack-plugin#options.
 };
 
-module.exports = withSentryConfig(exports, sentryWebpackPluginOptions);
+module.exports = withSentryConfig(
+  configWithPlugins,
+  sentryWebpackPluginOptions,
+);
