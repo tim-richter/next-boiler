@@ -26,6 +26,9 @@ const theme = createGlobalTheme(':root', {
   fontFamily: {
     body: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
   },
+  border: {
+    normal: `1px solid ${colors.purple['300']}`,
+  },
   borderRadius: {
     0: borderRadiusScale(0),
     1: borderRadiusScale(1),
@@ -67,6 +70,7 @@ const theme = createGlobalTheme(':root', {
   color: {
     white: '#f5f5f5',
     black: '#141414',
+    transparent: 'transparent',
 
     'gray-50': colors.coolGray[50],
     'gray-100': colors.coolGray[100],

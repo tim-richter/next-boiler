@@ -32,8 +32,9 @@ const responsiveProperties = defineProperties({
     marginRight: theme.space,
 
     width: ['100vw', '100%'],
-    height: ['100vh'],
+    height: ['100vh', '100%'],
     overflow: ['hidden'],
+    border: theme.border,
     borderRadius: theme.borderRadius,
     fontFamily: theme.fontFamily,
     fontWeight: theme.fontWeight,
