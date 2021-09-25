@@ -5,6 +5,13 @@ on:
       branches:
           - main
 
+env:
+  SENTRY_AUTH_TOKEN: '${{ secret.SENTRY_AUTH_TOKEN }}'
+  SENTRY_DSN: '${{ secret.SENTRY_DSN }}'
+  SENTRY_ORG: '${{ secret.SENTRY_ORG }}'
+  SENTRY_PROJECT: '${{ secret.SENTRY_PROJECT }}'
+  SENTRY_URL: '${{ secret.SENTRY_URL }}'
+
 jobs:
   cache-dependencies:
     name: 📄 Cache Dependencies
