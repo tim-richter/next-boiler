@@ -20,6 +20,14 @@ const Home = ({ language, translations, meta }: Props) => {
     <Page meta={meta}>
       <Heading as="h1">Next Boiler</Heading>
       <Text size="large">Hi this is vanilla-extract!</Text>
+      <button
+        type="button"
+        onClick={() => {
+          throw new Error('Sentry Frontend Error');
+        }}
+      >
+        Test Sentry Frontend Error
+      </button>
     </Page>
   );
 };
