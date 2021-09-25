@@ -40,10 +40,8 @@ const nextConfig = {
   ...i18n,
 };
 
-const withVanillaExtract = createVanillaExtractPlugin();
-
 const configWithPlugins = withPlugins(
-  [withOffline, withVanillaExtract, withBundleAnalyzer],
+  [withOffline, createVanillaExtractPlugin(), withBundleAnalyzer],
   nextConfig,
 );
 
@@ -53,6 +51,7 @@ const sentryWebpackPluginOptions = {
   // recommended:
   //   release, url, org, project, authToken, configFile, stripPrefix,
   //   urlPrefix, include, ignore
+  silent: true,
   // For all available options, see:
   // https://github.com/getsentry/sentry-webpack-plugin#options.
 };
