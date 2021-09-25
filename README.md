@@ -36,6 +36,7 @@
   - i18n-ready with [next-i18next](https://github.com/isaachinman/next-i18next)
   - Easy SEO with [next-seo](https://github.com/garmeeh/next-seo) on every page
   - Zero-config PWA with [next-offline](https://github.com/hanford/next-offline)
+  - Error tracking/Performance monitoring with [sentry](https://docs.sentry.io/platforms/javascript/guides/nextjs/)
   - [Eslint](https://eslint.org/) / [Prettier](https://prettier.io/) for code styling
   - [Husky](https://typicode.github.io/husky/#/) and [Lint-staged](https://github.com/okonet/lint-staged) for enforcing code style on every commit
   - Fully Automatic Version Management with [semantic-release](https://github.com/semantic-release/semantic-release)
@@ -55,6 +56,10 @@ read more about the dev server in the
 ```sh
 yarn dev
 ```
+
+### Setup Sentry
+
+Set the environment variables as defined in .env.example. Also see [docs](https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/).
 
 ### Project Structure
 The main directories in the project are structured as following:
