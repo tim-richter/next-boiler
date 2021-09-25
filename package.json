@@ -2,6 +2,9 @@
   "name": "next-boiler",
   "version": "1.6.0",
   "private": true,
+  "engines": {
+    "node": ">=14.17.6"
+  },
   "scripts": {
     "dev": "next dev",
     "start": "next start",
@@ -103,5 +106,9 @@
     "tsconfig-paths-webpack-plugin": "^3.5.1",
     "typescript": "^4.1.3",
     "webpack": "5"
+  },
+  "volta": {
+    "node": "14.17.6",
+    "yarn": "1.22.11"
   }
 }
