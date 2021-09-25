@@ -1,3 +1,22 @@
+# [1.6.0](https://github.com/tim-richter/next-boiler/compare/v1.5.0...v1.6.0) (2021-09-25)
+
+
+### Bug Fixes
+
+* add mandatory sentry environment variables to ci steps ([85694ed](https://github.com/tim-richter/next-boiler/commit/85694ed5facf2e1af6f74be03c0f7d95b303896f))
+* rename [@types](https://github.com/types) alias to [@custom](https://github.com/custom)Types ([b9a1b6a](https://github.com/tim-richter/next-boiler/commit/b9a1b6a844ebbedddd6ca3b1eaad56424334c5e2))
+* sentry config files ([6e3ccf6](https://github.com/tim-richter/next-boiler/commit/6e3ccf6861a31d0b525077bd308ec911a0527b9c))
+* ts error for exports ([862dda9](https://github.com/tim-richter/next-boiler/commit/862dda907f20123e587a5f33a0a2f2a75cf68e77))
+* use seperate step for caching dependencies ([a28eeb4](https://github.com/tim-richter/next-boiler/commit/a28eeb4dc9afe88de404d58b06e209b3c2c37b54))
+
+
+### Features
+
+* add new base component Select ([28494e7](https://github.com/tim-richter/next-boiler/commit/28494e74515a74cc4d4f4644b85d6124e14e91af))
+* add next eslint plugin ([2125c74](https://github.com/tim-richter/next-boiler/commit/2125c749c70bfe340ce0cfb45047a1eb7fb94a92))
+* add sentry base config ([9cf0420](https://github.com/tim-richter/next-boiler/commit/9cf0420ba824511bb48f73b21b293f6c37d91e5d))
+* add sentry test button on index page ([a662752](https://github.com/tim-richter/next-boiler/commit/a6627528f04d0f050a18295c7e32899330f937b0))
+
 # [1.5.0](https://github.com/tim-richter/next-boiler/compare/v1.4.0...v1.5.0) (2021-09-18)
 
 
