@@ -6,11 +6,11 @@ on:
           - main
 
 env:
-  SENTRY_AUTH_TOKEN: '${{ secret.SENTRY_AUTH_TOKEN }}'
-  SENTRY_DSN: '${{ secret.SENTRY_DSN }}'
-  SENTRY_ORG: '${{ secret.SENTRY_ORG }}'
-  SENTRY_PROJECT: '${{ secret.SENTRY_PROJECT }}'
-  SENTRY_URL: '${{ secret.SENTRY_URL }}'
+  SENTRY_AUTH_TOKEN: '${{ secrets.SENTRY_AUTH_TOKEN }}'
+  SENTRY_DSN: '${{ secrets.SENTRY_DSN }}'
+  SENTRY_ORG: '${{ secrets.SENTRY_ORG }}'
+  SENTRY_PROJECT: '${{ secrets.SENTRY_PROJECT }}'
+  SENTRY_URL: '${{ secrets.SENTRY_URL }}'
 
 jobs:
   cache-dependencies:
