@@ -4233,10 +4233,10 @@
   resolved "https://registry.yarnpkg.com/@vanilla-extract/private/-/private-1.0.1.tgz#c9479cebea7e7fbb07a1fe5b5c988a8753ef04ed"
   integrity sha512-ABrFJGSmF7a1M+eDTsIeAErPhIeRyBY3ypyLQPc4bUVEK1mvF7F2gx4fTP81pm12bkS0GhjSJtM854lcPWhB+w==
 
-"@vanilla-extract/recipes@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@vanilla-extract/recipes/-/recipes-0.1.0.tgz#b1e169c4c4fcc75f0d5f3543df9811b1ccf5bc73"
-  integrity sha512-PX2CxRdYkXiPiIcK2uxabBLbQlo6hZIlAVNGwxdy4ZI4OCOfPm6X2hNka+nFkpxXgZMdO/E6lXn2H6eFtxZ9BA==
+"@vanilla-extract/recipes@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@vanilla-extract/recipes/-/recipes-0.1.1.tgz#88e4bb41107ac1b3f8d80339e0e360b8f71a5817"
+  integrity sha512-V3BtRQ/v51B/a76Y4ySy569897QyHcYq7hlwYWlhsqvVDOs+qplaef4ENIfBjsRYpULMN9aUB0iiNKe0yksTdQ==
 
 "@vanilla-extract/sprinkles@^1.3.0":
   version "1.3.0"
@@ -11342,10 +11342,10 @@ next-offline@^5.0.5:
     fs-extra "~8.1.0"
     workbox-webpack-plugin "^5.0.0"
 
-next-seo@^4.27.0:
-  version "4.27.0"
-  resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-4.27.0.tgz#9e6d1b9b49c09c3f5e1e86443dc04854b4edbd48"
-  integrity sha512-nodRrdEePRjFBo+2osYpDCVi+EbO45/MmCnLQpmS59HuEXBDePa3gpM67kJk9cCJ9dKkfp/MwYtmNbhDImMvmg==
+next-seo@^4.28.1:
+  version "4.28.1"
+  resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-4.28.1.tgz#c98ee559c8ab7196c62d0f6903afd7a8cde47a03"
+  integrity sha512-WZgwdM+UhpNF3A37zFllzmPhnOVJ9vYeYlc0n3Z/kYfz/QQgy8NEdncNNggS9dU4JD8xriaCcyknhy5OsrFsJw==
 
 next@11.1.2:
   version "11.1.2"
