@@ -58,7 +58,8 @@
       "@config": [
         "src/config"
       ]
-    }
+    },
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
