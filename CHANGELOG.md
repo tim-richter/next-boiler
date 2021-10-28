@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/tim-richter/next-boiler/compare/v1.6.0...v1.6.1) (2021-10-28)
+
+
+### Bug Fixes
+
+* remove next offline plugin ([#5](https://github.com/tim-richter/next-boiler/issues/5)) ([3a872c4](https://github.com/tim-richter/next-boiler/commit/3a872c4e1b1bc4a14a2b7edeaae169ccefeb7523))
+
 # [1.6.0](https://github.com/tim-richter/next-boiler/compare/v1.5.0...v1.6.0) (2021-09-25)
 
 
