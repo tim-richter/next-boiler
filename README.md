@@ -35,7 +35,6 @@
   - Accessibility with [Radix-UI](https://www.radix-ui.com/)
   - i18n-ready with [next-i18next](https://github.com/isaachinman/next-i18next)
   - Easy SEO with [next-seo](https://github.com/garmeeh/next-seo) on every page
-  - Zero-config PWA with [next-offline](https://github.com/hanford/next-offline)
   - Error tracking/Performance monitoring with [sentry](https://docs.sentry.io/platforms/javascript/guides/nextjs/)
   - [Eslint](https://eslint.org/) / [Prettier](https://prettier.io/) for code styling
   - [Husky](https://typicode.github.io/husky/#/) and [Lint-staged](https://github.com/okonet/lint-staged) for enforcing code style on every commit
