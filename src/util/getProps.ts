@@ -16,6 +16,7 @@ import { SEOMeta } from '@customTypes';
 
 export interface BaseReturnProps {
   hostname?: string;
+  language: string;
   preview: true | null;
   previewRef: string | null;
 }
@@ -77,7 +78,7 @@ export const baseGetServerSideHandler =
           preview: preview || null,
           previewRef,
         },
-      };
+      } as any;
     }
 
     return { notFound: true };
