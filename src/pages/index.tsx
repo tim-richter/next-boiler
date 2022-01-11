@@ -12,7 +12,6 @@ export const getStaticProps = baseStaticHandler({
     description: 'The homepage.',
   },
 });
-
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const Home = ({ language, translations, meta }: Props) => {

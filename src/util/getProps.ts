@@ -45,7 +45,7 @@ export const baseGetServerSideHandler =
   ) =>
   async (
     ctx: GetServerSidePropsContext<ParsedUrlQuery>,
-  ): Promise<GetServerSidePropsResult<T & BaseReturnProps>> => {
+  ): Promise<GetServerSidePropsResult<{ data: T } & BaseReturnProps>> => {
     const { query, req, res, resolvedUrl, preview, previewData, locale } = ctx;
 
     const previewRef = typeof previewData === 'string' ? previewData : null;
@@ -63,17 +63,21 @@ export const baseGetServerSideHandler =
     });
 
     if ('redirect' in result) {
-      return result.redirect as any;
+      return {
+        redirect: result.redirect,
+      };
     }
 
-    if ('notFound' in result) {
-      return result.notFound as any;
+    if ('notFound' in result && result.notFound === true) {
+      return {
+        notFound: true,
+      };
     }
 
     if ('props' in result) {
       return {
         props: {
-          ...result.props,
+          data: result.props,
           language: languageWithFallback,
           preview: preview || null,
           previewRef,
@@ -123,7 +127,7 @@ export const baseStaticHandler =
     ctx: GetStaticPropsContext,
   ): Promise<
     T extends Record<string, any>
-      ? GetStaticPropsResult<T & BaseStaticHandlerReturn>
+      ? GetStaticPropsResult<{ data: T } & BaseStaticHandlerReturn>
       : GetStaticPropsResult<BaseStaticHandlerReturn>
   > => {
     const { preview, previewData, locale, params } = ctx;
@@ -145,7 +149,9 @@ export const baseStaticHandler =
       });
 
       if ('redirect' in result) {
-        return result.redirect as any;
+        return {
+          redirect: result.redirect,
+        };
       }
 
       if ('notFound' in result && result.notFound === true) {
@@ -157,7 +163,7 @@ export const baseStaticHandler =
       if ('props' in result) {
         return {
           props: {
-            ...result.props,
+            data: result.props,
             language: languageWithFallback,
             preview: preview || null,
             previewRef,
