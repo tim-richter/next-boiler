@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/tim-richter/next-boiler/compare/v1.6.1...v1.6.2) (2022-01-11)
+
+
+### Bug Fixes
+
+* use correct return values for getProps functions, return props inside data ([#8](https://github.com/tim-richter/next-boiler/issues/8)) ([5ae666d](https://github.com/tim-richter/next-boiler/commit/5ae666d70a26aa3182b669fb91d454b9a8993ce2))
+
 ## [1.6.1](https://github.com/tim-richter/next-boiler/compare/v1.6.0...v1.6.1) (2021-10-28)
 
 
