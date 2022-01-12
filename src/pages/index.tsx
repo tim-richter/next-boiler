@@ -2,6 +2,7 @@ import React from 'react';
 import Text from '@components/Text/Text';
 import { InferGetStaticPropsType } from 'next';
 import Heading from '@components/Heading/Heading';
+import { useTranslation } from 'next-i18next';
 import { baseStaticHandler } from '../util/getProps';
 import Page from '../layouts/Page';
 
@@ -14,18 +15,20 @@ export const getStaticProps = baseStaticHandler({
 });
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
-const Home = ({ language, translations, meta }: Props) => {
+const Home = ({ language, meta }: Props) => {
+  const { t } = useTranslation(['home', 'common']);
+
   return (
     <Page meta={meta}>
-      <Heading as="h1">Next Boiler</Heading>
-      <Text size="large">Hi this is vanilla-extract!</Text>
+      <Heading as="h1">{t('heading')}</Heading>
+      <Text size="large">{t('text')}</Text>
       <button
         type="button"
         onClick={() => {
           throw new Error('Sentry Frontend Error');
         }}
       >
-        Test Sentry Frontend Error
+        {t('sentry_error')}
       </button>
     </Page>
   );

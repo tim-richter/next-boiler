@@ -101,11 +101,10 @@ interface BaseStaticHandlerConfig {
   revalidate?: number;
 }
 
-interface BaseStaticHandlerReturn {
+interface BaseStaticHandlerReturn extends SSRConfig {
   language: string;
   preview: true | null;
   previewRef: string | null;
-  translations: SSRConfig;
   meta: SEOMeta;
 }
 
