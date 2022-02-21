@@ -1,6 +1,6 @@
 import React from 'react';
 import useSWR, { mutate } from 'swr';
-import { useRequest } from '../../../util';
+import { useRequest } from '@util';
 
 /**
  * This component is generated as an example for useSWR hook

@@ -1,6 +1,6 @@
 import React from 'react';
-import { FiChevronDown } from 'react-icons/fi';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
+import { FiChevronDown } from 'react-icons/fi';
 import * as styles from './Accordion.css';
 
 const AccordionTrigger = React.forwardRef<any, any>(

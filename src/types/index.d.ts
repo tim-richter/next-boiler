@@ -1,6 +1,6 @@
-import { NextSeoProps } from 'next-seo/lib/types';
 import React from 'react';
 import { RuntimeFn } from '@vanilla-extract/recipes/dist/declarations/src/types';
+import { NextSeoProps } from 'next-seo/lib/types';
 
 export type Children = React.ReactNode;
 

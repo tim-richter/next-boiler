@@ -1,7 +1,7 @@
-import nock from 'nock';
 import dotenv from 'dotenv';
 import '@vanilla-extract/css/disableRuntimeStyles';
 import { toHaveNoViolations } from 'jest-axe';
+import nock from 'nock';
 
 dotenv.config({ path: '.env.test' });
 

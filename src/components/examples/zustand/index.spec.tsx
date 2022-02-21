@@ -1,5 +1,4 @@
 import { renderHook, act } from '@testing-library/react-hooks';
-
 import { useStore } from './index';
 
 describe('zustand useStore hooks', () => {

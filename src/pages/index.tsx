@@ -1,9 +1,9 @@
 import React from 'react';
-import Text from '@components/Text/Text';
 import { InferGetStaticPropsType } from 'next';
-import Heading from '@components/Heading/Heading';
 import { useTranslation } from 'next-i18next';
-import { baseStaticHandler } from '../util/getProps';
+import Heading from '@components/Heading/Heading';
+import Text from '@components/Text/Text';
+import { baseStaticHandler } from '@util/getProps';
 import Page from '../layouts/Page';
 
 export const getStaticProps = baseStaticHandler({
@@ -15,7 +15,7 @@ export const getStaticProps = baseStaticHandler({
 });
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
-const Home = ({ language, meta }: Props) => {
+const Home = ({ meta }: Props) => {
   const { t } = useTranslation(['home', 'common']);
 
   return (
