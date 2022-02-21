@@ -29,7 +29,7 @@ const fetcher = async (args: RequestInfo) => {
 };
 
 // eslint-disable-next-line import/prefer-default-export
-export const useRequest = <T extends unknown>(
+export const useRequest = <T>(
   route: string,
 ): { isLoading: boolean; isError: any; data: T | undefined } => {
   const { data, error } = useSWR<T>(route, fetcher);

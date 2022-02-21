@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import {
   render as baseRender,
   RenderOptions,
@@ -15,7 +15,7 @@ import { WithChildren } from '@customTypes';
  */
 
 export const AllTheProviders = ({ children }: WithChildren) => {
-  return <>{children}</>;
+  return children;
 };
 
 const render = (ui: ReactElement, options?: Omit<RenderOptions, 'queries'>) =>
