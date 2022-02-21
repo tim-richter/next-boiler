@@ -57,6 +57,18 @@
       ],
       "@config": [
         "src/config"
+      ],
+      "@util/*": [
+        "src/util/*"
+      ],
+      "@util": [
+        "src/util"
+      ],
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@layouts": [
+        "src/layouts"
       ]
     },
     "incremental": true
