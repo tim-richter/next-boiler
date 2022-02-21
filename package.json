@@ -33,7 +33,7 @@
     "@next/bundle-analyzer": "^12.0.1",
     "@radix-ui/react-accordion": "^0.1.0",
     "@radix-ui/react-id": "^0.1.0",
-    "@sentry/nextjs": "^6.13.2",
+    "@sentry/nextjs": "^6.17.9",
     "@vanilla-extract/babel-plugin": "^1.1.4",
     "@vanilla-extract/css": "^1.6.8",
     "@vanilla-extract/next-plugin": "^2.0.1",
