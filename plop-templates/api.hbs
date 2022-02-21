@@ -1,0 +1,11 @@
+import { NextApiRequest, NextApiResponse } from 'next';
+
+const {{pascalCase this.name}}Api = async (
+  req: NextApiRequest,
+  res: NextApiResponse,
+): Promise<NextApiResponse<any> | void> => {
+  res.status(200).send('OK');
+  return res.end();
+};
+
+export default {{pascalCase this.name}}Api;

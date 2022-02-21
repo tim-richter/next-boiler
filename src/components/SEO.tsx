@@ -1,6 +1,6 @@
 import React from 'react';
-import { SEOMeta } from '@customTypes';
 import { NextSeo } from 'next-seo';
+import { SEOMeta } from '@customTypes';
 
 interface Props {
   meta: SEOMeta;

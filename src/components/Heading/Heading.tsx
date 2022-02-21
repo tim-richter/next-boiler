@@ -1,6 +1,6 @@
 import React from 'react';
-import { RecipeVariants, WithChildren } from '@customTypes';
 import { styledHeading } from '@components/Heading/Heading.css';
+import { RecipeVariants, WithChildren } from '@customTypes';
 
 type Props = WithChildren<RecipeVariants<typeof styledHeading>>;
 

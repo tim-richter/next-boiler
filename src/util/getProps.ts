@@ -1,15 +1,15 @@
+import { IncomingMessage, ServerResponse } from 'http';
+import { ParsedUrlQuery } from 'querystring';
 import {
   GetServerSidePropsContext,
   GetServerSidePropsResult,
   GetStaticPropsContext,
   GetStaticPropsResult,
 } from 'next';
-import { IncomingMessage, ServerResponse } from 'http';
-import { NextApiRequestCookies } from 'next/dist/server/api-utils';
-import { ParsedUrlQuery } from 'querystring';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import config from '@config';
 import { SSRConfig } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { NextApiRequestCookies } from 'next/dist/server/api-utils';
+import config from '@config';
 import { SEOMeta } from '@customTypes';
 
 /* eslint-disable @typescript-eslint/no-unsafe-return */
@@ -19,6 +19,12 @@ export interface BaseReturnProps {
   language: string;
   preview: true | null;
   previewRef: string | null;
+  meta?: SEOMeta;
+}
+
+interface BaseGetServerSideHandlerConfig {
+  translationNamespaces?: string[];
+  meta?: SEOMeta;
 }
 
 interface BaseServerSideHandlerContext {
@@ -35,21 +41,27 @@ interface BaseServerSideHandlerContext {
 /**
  * Provides basic handling of getServerSideProps Logic.
  * Custom Logic can be inserted by using the customLogic parameter. Falls back to 404.
+ * @param props
  * @param customLogic Function to fetch or otherwise return custom props to the page.
  */
 export const baseGetServerSideHandler =
-  async <T extends Record<string, any>>(
-    customLogic: (
-      context: BaseServerSideHandlerContext,
-    ) => Promise<GetServerSidePropsResult<T>> | GetServerSidePropsResult<T>,
+  <T extends Record<string, any>, I extends SEOMeta>(
+    props: BaseGetServerSideHandlerConfig,
+    customLogic: (context: BaseServerSideHandlerContext) => Promise<
+      GetServerSidePropsResult<
+        | T
+        | {
+            meta: I;
+          }
+      >
+    >,
   ) =>
   async (
-    ctx: GetServerSidePropsContext<ParsedUrlQuery>,
-  ): Promise<GetServerSidePropsResult<{ data: T } & BaseReturnProps>> => {
+    ctx: GetServerSidePropsContext,
+  ): Promise<GetServerSidePropsResult<{ data: T; meta: I }>> => {
     const { query, req, res, resolvedUrl, preview, previewData, locale } = ctx;
 
     const previewRef = typeof previewData === 'string' ? previewData : null;
-
     const languageWithFallback = locale || config.i18n.defaultLocale;
 
     const result = await customLogic({
@@ -68,19 +80,33 @@ export const baseGetServerSideHandler =
       };
     }
 
-    if ('notFound' in result && result.notFound === true) {
+    if ('notFound' in result && result.notFound) {
       return {
         notFound: true,
       };
     }
 
     if ('props' in result) {
+      const resolvedProps = await result.props;
+
+      const translations = await serverSideTranslations(
+        languageWithFallback,
+        props?.translationNamespaces || ['common'],
+      );
+
+      const meta = {
+        ...props.meta,
+        ...(resolvedProps?.meta ? resolvedProps.meta : []),
+      };
+
       return {
         props: {
           data: result.props,
           language: languageWithFallback,
           preview: preview || null,
           previewRef,
+          meta,
+          ...translations,
         },
       } as any;
     }
@@ -101,11 +127,10 @@ interface BaseStaticHandlerConfig {
   revalidate?: number;
 }
 
-interface BaseStaticHandlerReturn {
+interface BaseStaticHandlerReturn extends SSRConfig {
   language: string;
   preview: true | null;
   previewRef: string | null;
-  translations: SSRConfig;
   meta: SEOMeta;
 }
 

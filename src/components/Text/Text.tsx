@@ -1,6 +1,6 @@
 import React from 'react';
-import { RecipeVariants, WithChildren } from '@customTypes';
 import { styledText } from '@components/Text/Text.css';
+import { RecipeVariants, WithChildren } from '@customTypes';
 
 type Props = WithChildren<RecipeVariants<typeof styledText>>;
 

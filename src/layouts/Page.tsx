@@ -1,9 +1,9 @@
 import React from 'react';
-import { SEOMeta, WithChildren } from '@customTypes';
 import SEO from '@components/SEO';
+import { SEOMeta, WithChildren } from '@customTypes';
+import Footer from './Footer';
 import Header from './Header';
 import Main from './Main';
-import Footer from './Footer';
 
 interface PageProps {
   meta: SEOMeta;

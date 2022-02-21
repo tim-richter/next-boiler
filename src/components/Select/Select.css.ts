@@ -1,6 +1,6 @@
+import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 import { sprinkles } from '@styles/sprinkles.css';
-import { style } from '@vanilla-extract/css';
 
 // eslint-disable-next-line import/prefer-default-export
 export const styledSelect = recipe({

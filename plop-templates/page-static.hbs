@@ -1,0 +1,29 @@
+import React from 'react';
+import Text from '@components/Text/Text';
+import { InferGetStaticPropsType } from 'next';
+import Heading from '@components/Heading/Heading';
+import { useTranslation } from 'next-i18next';
+import { baseStaticHandler } from '@util/getProps';
+import Page from '@layouts/Page';
+
+export const getStaticProps = baseStaticHandler({
+  translationNamespaces: ['common'],
+  meta: {
+    title: '{{startCase this.name}}',
+    description: 'Description',
+  },
+});
+type Props = InferGetStaticPropsType<typeof getStaticProps>;
+
+const {{pascalCase this.name}} = ({ meta }: Props) => {
+  const { t } = useTranslation(['common']);
+
+  return (
+    <Page meta={meta}>
+      <Heading as="h1">{{this.name}}</Heading>
+      <Text size="large">{t('text')}</Text>
+    </Page>
+  );
+};
+
+export default {{pascalCase this.name}};
