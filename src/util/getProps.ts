@@ -41,7 +41,8 @@ interface BaseServerSideHandlerContext {
 /**
  * Provides basic handling of getServerSideProps Logic.
  * Custom Logic can be inserted by using the customLogic parameter. Falls back to 404.
- * @param props
+ *
+ * @param props Additional props
  * @param customLogic Function to fetch or otherwise return custom props to the page.
  */
 export const baseGetServerSideHandler =
@@ -140,7 +141,8 @@ type ICustomLogic<T> = (
 
 /**
  * Provides basic handling of getStaticProps Logic.
- * @param props Additional props that should be added to the response for example revalidate
+ *
+ * @param props Additional props that should be added to the response (e.g. revalidate)
  * @param customLogic Custom Fetch Logic
  */
 export const baseStaticHandler =
