@@ -1,3 +1,11 @@
+## [1.6.3](https://github.com/tim-richter/next-boiler/compare/v1.6.2...v1.6.3) (2022-02-21)
+
+
+### Bug Fixes
+
+* accordion exported twice ([82690ba](https://github.com/tim-richter/next-boiler/commit/82690bae34fba562f3002f030308c6844cf1cc56))
+* ts error in accordion props ([e3a918f](https://github.com/tim-richter/next-boiler/commit/e3a918fd317b61bb6d75bcd74e362b0d96d5127a))
+
 ## [1.6.2](https://github.com/tim-richter/next-boiler/compare/v1.6.1...v1.6.2) (2022-01-11)
 
 
