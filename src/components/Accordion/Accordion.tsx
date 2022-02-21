@@ -40,11 +40,7 @@ export interface AccordionProps {
   defaultValue: string;
 }
 
-export const Accordion = ({
-  data,
-  defaultValue,
-  type = 'single',
-}: AccordionProps) => {
+const Accordion = ({ data, defaultValue, type = 'single' }: AccordionProps) => {
   if (data.length === 0) return null;
 
   return (
