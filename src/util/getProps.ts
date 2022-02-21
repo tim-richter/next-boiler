@@ -134,7 +134,7 @@ interface BaseStaticHandlerReturn extends SSRConfig {
   meta: SEOMeta;
 }
 
-type ICustomLogic<T extends unknown> = (
+type ICustomLogic<T> = (
   context: BaseStaticHandlerContext,
 ) => Promise<GetStaticPropsResult<T>> | GetStaticPropsResult<T>;
 
@@ -144,16 +144,18 @@ type ICustomLogic<T extends unknown> = (
  * @param customLogic Custom Fetch Logic
  */
 export const baseStaticHandler =
-  <T extends Record<string, any> | undefined>(
+  <C extends ICustomLogic<any>>(
     props: BaseStaticHandlerConfig,
-    customLogic?: ICustomLogic<T>,
+    customLogic?: C,
   ) =>
   async (
     ctx: GetStaticPropsContext,
   ): Promise<
-    T extends Record<string, any>
-      ? GetStaticPropsResult<{ data: T } & BaseStaticHandlerReturn>
-      : GetStaticPropsResult<BaseStaticHandlerReturn>
+    GetStaticPropsResult<
+      {
+        data: C extends ICustomLogic<infer R> ? R : null;
+      } & BaseStaticHandlerReturn
+    >
   > => {
     const { preview, previewData, locale, params } = ctx;
 
@@ -179,7 +181,7 @@ export const baseStaticHandler =
         };
       }
 
-      if ('notFound' in result && result.notFound === true) {
+      if ('notFound' in result && result.notFound) {
         return {
           notFound: true,
         };
@@ -204,6 +206,7 @@ export const baseStaticHandler =
 
     return {
       props: {
+        data: null,
         language: languageWithFallback,
         preview: preview || null,
         previewRef,
