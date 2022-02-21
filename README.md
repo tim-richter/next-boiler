@@ -32,6 +32,7 @@
 * Written with best practices in mind
   - Helper functions with sensible defaults for getServerSideProps/getStaticProps
   - Ready to use layouts for all pages
+  - [plop](https://github.com/plopjs/plop) for creating pages with a uniformity.
   - Accessibility with [Radix-UI](https://www.radix-ui.com/)
   - i18n-ready with [next-i18next](https://github.com/isaachinman/next-i18next)
   - Easy SEO with [next-seo](https://github.com/garmeeh/next-seo) on every page
@@ -59,6 +60,17 @@ yarn dev
 ### Setup Sentry
 
 Set the environment variables as defined in .env.example. Also see [docs](https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/).
+
+### Plop
+
+You can use plop to create pages and api routes in the cli. Plop makes sure every new page
+conforms to predefined standards.
+
+To run plop and get prompts for creating a new page run:
+
+```javascript
+yarn plop
+```
 
 ### Project Structure
 The main directories in the project are structured as following:
