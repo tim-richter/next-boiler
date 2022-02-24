@@ -3,10 +3,14 @@ const { compilerOptions } = require('../tsconfig.json');
 
 const paths = compilerOptions.paths ? compilerOptions.paths : {};
 
+/** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
   rootDir: '../',
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/test/jest.setup.ts'],
+  transform: {
+    '^.+\\.tsx?$': 'ts-jest',
+  },
   testPathIgnorePatterns: [
     '<rootDir>/.next/',
     '<rootDir>/node_modules/',
@@ -15,5 +19,11 @@ module.exports = {
   moduleNameMapper: {
     ...pathsToModuleNameMapper(paths, { prefix: '<rootDir>/' }),
     '\\.(scss|sass|css)$': 'identity-obj-proxy',
+  },
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  globals: {
+    'ts-jest': {
+      babelConfig: '<rootDir>/test/.babelrc',
+    },
   },
 };
