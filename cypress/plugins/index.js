@@ -16,9 +16,10 @@
  * @type {Cypress.PluginConfig}
  */
 // eslint-disable-next-line no-unused-vars
-module.exports = (on, config) => {
+module.exports = (on) => {
   on('task', {
     log(message) {
+      // eslint-disable-next-line no-console
       console.log(message);
 
       return null;

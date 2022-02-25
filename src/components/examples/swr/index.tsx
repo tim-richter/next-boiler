@@ -1,5 +1,5 @@
 import React from 'react';
-import useSWR, { mutate } from 'swr';
+import { mutate } from 'swr';
 import { useRequest } from '@util';
 
 /**
@@ -13,7 +13,8 @@ const API_URL =
   'https://official-joke-api.appspot.com/jokes/programming/random';
 
 const SWRExample = () => {
-  const { data, isError } = useRequest<any>(API_URL);
+  const { data } =
+    useRequest<{ id: string; setup: string; punchline: string }[]>(API_URL);
 
   const refetch = () => {
     mutate(API_URL);

@@ -1,33 +1,27 @@
 import React from 'react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
+import {
+  AccordionContentProps,
+  AccordionTriggerProps,
+} from '@radix-ui/react-accordion';
 import { FiChevronDown } from 'react-icons/fi';
 import * as styles from './Accordion.css';
 
-const AccordionTrigger = React.forwardRef<any, any>(
-  ({ children, ...props }, forwardedRef) => (
-    <AccordionPrimitive.Header className={styles.header}>
-      <AccordionPrimitive.Trigger
-        {...props}
-        ref={forwardedRef}
-        className={styles.trigger}
-      >
-        {children}
-        <FiChevronDown aria-hidden className={styles.chevron} />
-      </AccordionPrimitive.Trigger>
-    </AccordionPrimitive.Header>
-  ),
+/* eslint-disable react/jsx-props-no-spreading */
+
+const AccordionTrigger = ({ children, ...props }: AccordionTriggerProps) => (
+  <AccordionPrimitive.Header className={styles.header}>
+    <AccordionPrimitive.Trigger {...props} className={styles.trigger}>
+      {children}
+      <FiChevronDown aria-hidden className={styles.chevron} />
+    </AccordionPrimitive.Trigger>
+  </AccordionPrimitive.Header>
 );
 
-const AccordionContent = React.forwardRef<any, any>(
-  ({ children, ...props }, forwardedRef) => (
-    <AccordionPrimitive.Content
-      {...props}
-      ref={forwardedRef}
-      className={styles.content}
-    >
-      <div className={styles.contentText}>{children}</div>
-    </AccordionPrimitive.Content>
-  ),
+const AccordionContent = ({ children, ...props }: AccordionContentProps) => (
+  <AccordionPrimitive.Content {...props} className={styles.content}>
+    <div className={styles.contentText}>{children}</div>
+  </AccordionPrimitive.Content>
 );
 
 export interface AccordionProps {

@@ -12,7 +12,7 @@ import { NextApiRequestCookies } from 'next/dist/server/api-utils';
 import config from '@config';
 import { SEOMeta } from '@customTypes';
 
-/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-unsafe-return, @typescript-eslint/no-explicit-any */
 
 export interface BaseReturnProps {
   hostname?: string;
