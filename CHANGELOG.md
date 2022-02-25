@@ -1,3 +1,15 @@
+# [1.7.0](https://github.com/tim-richter/next-boiler/compare/v1.6.3...v1.7.0) (2022-02-25)
+
+
+### Bug Fixes
+
+* remove deprecated tailwind colors ([3b34d1b](https://github.com/tim-richter/next-boiler/commit/3b34d1bdec5292b28b0a0acfa6fa8b8fb929e66e))
+
+
+### Features
+
+* remove babelrc file, enable swc for next.js ([221a2d1](https://github.com/tim-richter/next-boiler/commit/221a2d1e520002a63563e0417bb054d5135747b7))
+
 ## [1.6.3](https://github.com/tim-richter/next-boiler/compare/v1.6.2...v1.6.3) (2022-02-21)
 
 
