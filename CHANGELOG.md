@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/tim-richter/next-boiler/compare/v1.7.0...v1.7.1) (2022-03-03)
+
+
+### Bug Fixes
+
+* import order for plop static pages ([5ed9825](https://github.com/tim-richter/next-boiler/commit/5ed98259a9b5eb3fa2313f379682884ce83153c2))
+
 # [1.7.0](https://github.com/tim-richter/next-boiler/compare/v1.6.3...v1.7.0) (2022-02-25)
 
 
