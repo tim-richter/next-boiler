@@ -1,10 +1,10 @@
 import React from 'react';
-import Text from '@components/Text/Text';
 import { InferGetStaticPropsType } from 'next';
-import Heading from '@components/Heading/Heading';
 import { useTranslation } from 'next-i18next';
-import { baseStaticHandler } from '@util/getProps';
+import Heading from '@components/Heading/Heading';
+import Text from '@components/Text/Text';
 import Page from '@layouts/Page';
+import { baseStaticHandler } from '@util/getProps';
 
 export const getStaticProps = baseStaticHandler({
   translationNamespaces: ['common'],
