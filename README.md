@@ -24,12 +24,12 @@
 
 ## Key Features
 
-* Typescript
-* Styling with zero runtime CSS-in-JS Solution [Vanilla-Extract](https://github.com/seek-oss/vanilla-extract)
-* [Storybook](https://storybook.js.org/docs/react/get-started/introduction) for developing components in isolation
-* Unit/Component Tests with [jest](https://jestjs.io/) and [testing-library](https://testing-library.com/docs/react-testing-library/intro)
-* End-to-End Tests with [cypress](https://docs.cypress.io/guides/overview/why-cypress#In-a-nutshell)
-* Written with best practices in mind
+- Typescript
+- Styling with zero runtime CSS-in-JS Solution [Vanilla-Extract](https://github.com/seek-oss/vanilla-extract)
+- [Storybook](https://storybook.js.org/docs/react/get-started/introduction) for developing components in isolation
+- Unit/Component Tests with [jest](https://jestjs.io/) and [testing-library](https://testing-library.com/docs/react-testing-library/intro)
+- End-to-End Tests with [cypress](https://docs.cypress.io/guides/overview/why-cypress#In-a-nutshell)
+- Written with best practices in mind
   - Helper functions with sensible defaults for getServerSideProps/getStaticProps
   - Ready to use layouts for all pages
   - [plop](https://github.com/plopjs/plop) for creating pages with a uniformity.
@@ -44,15 +44,19 @@
 ## How To Use
 
 ### Initial Setup
+
 After cloning the project first time, run following command to install all dependencies:
+
 ```sh
 yarn
 ```
 
 ### Starting Dev Server
+
 The following commands starts the dev server on http://localhost:3000. You can
 read more about the dev server in the
 [documentation](https://nextjs.org/docs/api-reference/cli#development).
+
 ```sh
 yarn dev
 ```
@@ -72,8 +76,20 @@ To run plop and get prompts for creating a new page run:
 yarn plop
 ```
 
+## Nice to Know
+
+### Commitlint
+
+We use commitlint to enforce commit style. If you would like to add new type enums or change the settings you can do so in the commitlint.config.js file.
+
+### VS Code Debugging
+
+General purpose launch settings for vs code are located in the .vscode/launch.json file. You can run these pre-defined debug sessions in your vs code debug tab.
+
 ### Project Structure
+
 The main directories in the project are structured as following:
+
 ```
 ▸ .github
 ▸ .storybook
@@ -91,6 +107,7 @@ The main directories in the project are structured as following:
 ```
 
 #### .github
+
 The project already comes with defaults for github-actions. This directory contains
 the main workflow which runs all the tests of the repository and then creates a new release
 with semantic-release. When it comes to deployment and vercel you might like to
@@ -99,14 +116,17 @@ all these scripts before the deployment to vercel or just run all scripts
 in one build command on vercel (ready to use: yarn ci:test-build)
 
 #### .storybook
+
 All storybook config goes into this directory. See
 [documentation](https://storybook.js.org/docs/react/configure/overview)
 
 #### cypress
+
 Standard cypress (typescript) installation folder. See
 [documentation](https://docs.cypress.io/guides/core-concepts/writing-and-organizing-tests#Folder-structure)
 
 #### Public
+
 This directory is where all the static assets are stored. Also contains i18n translations
 that will be injected by next-i18next. translationNamespaces in baseStaticHandler refers to
 these file names. See [documentation](https://nextjs.org/docs/basic-features/static-file-serving)
@@ -115,35 +135,43 @@ for further questions.
 #### Src
 
 ##### Components
+
 All of the React components that are used on different parts of the project can
 be found under this directory. These components are usually single responsibility
 pieces that are handling their own logic and styling.
 
 ##### Config
+
 Config files for global config rules.
 
 ##### Layouts
+
 This directory contains main layouts used to wrap pages and large parts of the
 user interface.
 
 ##### Pages
+
 This is a directory specific to NextJS. It contains a React component per
 route in the website. You can
 read more about how routing is handled in a NextJS project
 [here](https://nextjs.org/docs/basic-features/pages).
 
 ##### Styles
+
 This directory contains definitions for different CSS variables that are used
 around the project. It contains a global.css file that handles basic styling for all
 elements and a stitches.config.ts file that instantiates a new stitches instance
 and sets configuration for our design system.
 
 ##### Types
+
 Global Typescript Types. All .d.ts files in this directory are automatically
 included into typescript.
 
 ##### Util
+
 This directory contains several utility files for different functionalities.
 
 #### Test
+
 Config/Setup Files for jest and testing-library.
