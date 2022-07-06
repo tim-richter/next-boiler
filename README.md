@@ -48,7 +48,7 @@
 After cloning the project first time, run following command to install all dependencies:
 
 ```sh
-yarn
+pnpm
 ```
 
 ### Starting Dev Server
@@ -58,7 +58,7 @@ read more about the dev server in the
 [documentation](https://nextjs.org/docs/api-reference/cli#development).
 
 ```sh
-yarn dev
+pnpm dev
 ```
 
 ### Setup Sentry
@@ -73,7 +73,7 @@ conforms to predefined standards.
 To run plop and get prompts for creating a new page run:
 
 ```javascript
-yarn plop
+pnpm plop
 ```
 
 ## Nice to Know
@@ -113,7 +113,7 @@ the main workflow which runs all the tests of the repository and then creates a 
 with semantic-release. When it comes to deployment and vercel you might like to
 use [vercel-action](https://github.com/marketplace/actions/vercel-action) to run
 all these scripts before the deployment to vercel or just run all scripts
-in one build command on vercel (ready to use: yarn ci:test-build)
+in one build command on vercel (ready to use: pnpm ci:test-build)
 
 #### .storybook
 
