@@ -43,6 +43,12 @@
       "rules": {
           "@typescript-eslint/no-var-requires": "off"
       }
+    },
+    {
+      "files": ["cypress.config.ts"],
+      "rules": {
+          "no-param-reassign": "off"
+      }
     }
   ],
   "rules": {
@@ -75,7 +81,8 @@
         "**/*.stories.{js,jsx,ts,tsx}",
         "test/**/*",
         "cypress/**/*",
-        "plopfile.mjs"
+        "plopfile.mjs",
+        "cypress.config.ts"
       ]
     }],
     "react/function-component-definition": ["error", {
