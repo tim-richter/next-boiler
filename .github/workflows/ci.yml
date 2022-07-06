@@ -222,6 +222,11 @@ jobs:
           name: next-build
           path: .next
 
+      - name: Cypress install
+        uses: cypress-io/github-action@v4
+        with:
+          runTests: false
+
       - name: Run e2e test
         run: pnpm e2e:test
 
