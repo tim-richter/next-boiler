@@ -41,6 +41,7 @@ module.exports = {
         'refactor',
         'style',
         'test',
+        'chore',
       ],
     ],
   },
