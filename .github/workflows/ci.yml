@@ -17,20 +17,35 @@ jobs:
     name: 📄 Cache Dependencies
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Cache yarn dependencies and cypress
-        uses: actions/cache@v2
-        id: yarn-cache
+      - uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
         with:
-          path: |
-            ~/.cache/Cypress
-            node_modules
-          key: ${{ runner.os }}-yarn-v1-${{ hashFiles('**/yarn.lock') }}
+          node-version: 16
+
+      - uses: pnpm/action-setup@v2.0.1
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: |
+          echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-v1
-      - name: Install dependencies if cache invalid
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
 
   lint:
     name: 🔎 Lint
@@ -38,23 +53,20 @@ jobs:
     needs:
       - cache-dependencies
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Setup node env
-        uses: actions/setup-node@v2.1.2
+        uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Restore yarn dependencies
-        uses: actions/cache@v2
-        id: yarn-cache
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
         with:
-          path: |
-            ~/.cache/Cypress
-            node_modules
-          key: ${{ runner.os }}-yarn-v1-${{ hashFiles('**/yarn.lock') }}
+          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-v1
+            ${{ runner.os }}-pnpm-store-
       - name: Run lint
-        run: yarn lint
+        run: pnpm lint
 
   test:
     name: 🧪 Unit Tests
@@ -62,23 +74,20 @@ jobs:
     needs:
       - lint
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Setup node env
-        uses: actions/setup-node@v2.1.2
+        uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Restore yarn dependencies
-        uses: actions/cache@v2
-        id: yarn-cache
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
         with:
-          path: |
-            ~/.cache/Cypress
-            node_modules
-          key: ${{ runner.os }}-yarn-v1-${{ hashFiles('**/yarn.lock') }}
+          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-v1
+            ${{ runner.os }}-pnpm-store-
       - name: Run tests
-        run: yarn test
+        run: pnpm test
 
   build:
     name: 📦 Build Next.js
@@ -86,23 +95,20 @@ jobs:
     needs:
       - lint
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Setup node env
-        uses: actions/setup-node@v2.1.2
+        uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Restore yarn dependencies
-        uses: actions/cache@v2
-        id: yarn-cache
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
         with:
-          path: |
-            ~/.cache/Cypress
-            node_modules
-          key: ${{ runner.os }}-yarn-v1-${{ hashFiles('**/yarn.lock') }}
+          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-v1
+            ${{ runner.os }}-pnpm-store-
       - name: Build Next.js
-        run: yarn build
+        run: pnpm build
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
         with:
@@ -115,28 +121,25 @@ jobs:
       - build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Setup node env
-        uses: actions/setup-node@v2.1.2
+        uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Restore yarn dependencies
-        uses: actions/cache@v2
-        id: yarn-cache
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
         with:
-          path: |
-            ~/.cache/Cypress
-            node_modules
-          key: ${{ runner.os }}-yarn-v1-${{ hashFiles('**/yarn.lock') }}
+          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-v1
+            ${{ runner.os }}-pnpm-store-
       - name: Download a single artifact
         uses: actions/download-artifact@v2
         with:
           name: next-build
           path: .next
       - name: Run e2e test
-        run: yarn e2e:test
+        run: pnpm e2e:test
 
   release:
     name: 🚀 Release
@@ -145,22 +148,19 @@ jobs:
       - test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Setup node env
-        uses: actions/setup-node@v2.1.2
+        uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Restore yarn dependencies
-        uses: actions/cache@v2
-        id: yarn-cache
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
         with:
-          path: |
-            ~/.cache/Cypress
-            node_modules
-          key: ${{ runner.os }}-yarn-v1-${{ hashFiles('**/yarn.lock') }}
+          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-v1
+            ${{ runner.os }}-pnpm-store-
       - name: Release
-        run: yarn release
+        run: pnpm release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
