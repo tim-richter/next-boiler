@@ -1,3 +1,23 @@
+# [1.8.0](https://github.com/tim-richter/next-boiler/compare/v1.7.1...v1.8.0) (2022-07-06)
+
+
+### Bug Fixes
+
+* add chore to type enum ([#23](https://github.com/tim-richter/next-boiler/issues/23)) ([7d781ae](https://github.com/tim-richter/next-boiler/commit/7d781ae7f7061e8b25dd8e1d1c6c1787de96784a))
+* cache cypress bin folder ([#20](https://github.com/tim-richter/next-boiler/issues/20)) ([758ccc9](https://github.com/tim-richter/next-boiler/commit/758ccc91c4f8312536cb1de4b7a705f963a0b2a4))
+* ci cache pnpm ([#16](https://github.com/tim-richter/next-boiler/issues/16)) ([e876daa](https://github.com/tim-richter/next-boiler/commit/e876daa7c5641d960c447793d5e1cc6d643250d9))
+* increase footer max length ([#24](https://github.com/tim-richter/next-boiler/issues/24)) ([286da3b](https://github.com/tim-richter/next-boiler/commit/286da3bbd4a50fcae81290b9bec31bbf5c34d398))
+* install cypress bin seperately ([#21](https://github.com/tim-richter/next-boiler/issues/21)) ([0ff5574](https://github.com/tim-richter/next-boiler/commit/0ff5574ab2d01ad369d6c4fe8c4c0d2aab97ebb4))
+* install cypress manually ([#22](https://github.com/tim-richter/next-boiler/issues/22)) ([994c109](https://github.com/tim-richter/next-boiler/commit/994c109ed775b7359747f71a0911283bb741593a))
+* install pnpm in every job ([#17](https://github.com/tim-richter/next-boiler/issues/17)) ([9c593e3](https://github.com/tim-richter/next-boiler/commit/9c593e3dd79b6bf4a2cf39e6c7845246728c0357))
+* jest types ([#19](https://github.com/tim-richter/next-boiler/issues/19)) ([6e5717e](https://github.com/tim-richter/next-boiler/commit/6e5717edc7a72bfd2c26cf7342de65dae90fa78e))
+* run pnpm i on every job ([#18](https://github.com/tim-richter/next-boiler/issues/18)) ([60eadd2](https://github.com/tim-richter/next-boiler/commit/60eadd27c9acd9ab75f7026c2591692a2087ca7f))
+
+
+### Features
+
+* upgrade all deps ([#15](https://github.com/tim-richter/next-boiler/issues/15)) ([c230413](https://github.com/tim-richter/next-boiler/commit/c230413d75135e85de82f606138fecd1d14ea82d))
+
 ## [1.7.1](https://github.com/tim-richter/next-boiler/compare/v1.7.0...v1.7.1) (2022-03-03)
 
 
