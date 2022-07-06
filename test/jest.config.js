@@ -7,7 +7,7 @@ const paths = compilerOptions.paths ? compilerOptions.paths : {};
 module.exports = {
   rootDir: '../',
   testEnvironment: 'jsdom',
-  setupFilesAfterEnv: ['<rootDir>/test/jest.setup.ts'],
+  setupFilesAfterEnv: ['jest-extended/all', '<rootDir>/test/jest.setup.ts'],
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
   },
