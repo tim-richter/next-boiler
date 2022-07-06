@@ -63,6 +63,7 @@ specifiers:
   jest: ^28.1.2
   jest-axe: ^6.0.0
   jest-environment-jsdom: ^28.1.2
+  jest-extended: ^2.0.0
   lint-staged: ^13.0.3
   lodash: ^4.17.21
   mini-css-extract-plugin: ^2.6.1
@@ -170,6 +171,7 @@ devDependencies:
   jest: 28.1.2_@types+node@18.0.3
   jest-axe: 6.0.0
   jest-environment-jsdom: 28.1.2
+  jest-extended: 2.0.0_jest@28.1.2
   lint-staged: 13.0.3
   lodash: 4.17.21
   mini-css-extract-plugin: 2.6.1_webpack@5.73.0
@@ -11035,7 +11037,7 @@ packages:
     resolution: {integrity: sha512-m0NvkX55LDt9T4mctTEgnZk3fmEg3NRYutvMPWM/0iPnkFj2wIeF45O1718cMSOFO1vINkqmxqD8vE37uTEbqw==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     dependencies:
-      chalk: 4.1.0
+      chalk: 4.1.2
       diff-sequences: 27.5.1
       jest-get-type: 27.5.1
       pretty-format: 27.5.1
@@ -11098,6 +11100,17 @@ packages:
       '@types/node': 18.0.3
       jest-mock: 28.1.1
       jest-util: 28.1.1
+    dev: true
+
+  /jest-extended/2.0.0_jest@28.1.2:
+    resolution: {integrity: sha512-6AgjJQVaBEKGSK3FH90kOiRUWJsbzn9NWtW0pjGkAFIdH0oPilfkV/gHPJdVvJeBiqT3jMHw8TUg9pUGC1azDg==}
+    engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+    peerDependencies:
+      jest: '>=27.2.5'
+    dependencies:
+      jest: 28.1.2_@types+node@18.0.3
+      jest-diff: 27.5.1
+      jest-get-type: 27.5.1
     dev: true
 
   /jest-get-type/27.5.1:
@@ -11164,7 +11177,7 @@ packages:
     resolution: {integrity: sha512-Qczi5xnTNjkhcIB0Yy75Txt+Ez51xdhOxsukN7awzq2auZQGPHcQrJ623PZj0ECDEMOk2soxWx05EXdXGd1CbA==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     dependencies:
-      chalk: 4.1.0
+      chalk: 4.1.2
       jest-diff: 27.5.1
       jest-get-type: 27.5.1
       pretty-format: 27.5.1
