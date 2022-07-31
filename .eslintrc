@@ -23,7 +23,8 @@
     "plugin:import/typescript",
     "plugin:cypress/recommended",
     "plugin:prettier/recommended",
-    "plugin:@next/next/recommended"
+    "plugin:@next/next/recommended",
+    "plugin:react/jsx-runtime"
   ],
   "overrides": [
     {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { InferGetStaticPropsType } from 'next';
 import { useTranslation } from 'next-i18next';
 import Heading from '@components/Heading/Heading';

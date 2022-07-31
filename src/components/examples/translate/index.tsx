@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 
@@ -9,7 +8,7 @@ import Link from 'next/link';
  * please visit https://github.com/isaachinman/next-i18next
  */
 
-const I18NExampleComponent: React.FC = () => {
+const I18NExampleComponent = () => {
   const { t } = useTranslation(['common', 'home']);
 
   return (

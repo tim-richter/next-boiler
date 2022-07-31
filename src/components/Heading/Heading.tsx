@@ -1,4 +1,3 @@
-import React from 'react';
 import { styledHeading } from '@components/Heading/Heading.css';
 import { RecipeVariants, WithChildren } from '@customTypes';
 

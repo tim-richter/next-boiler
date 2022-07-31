@@ -3,7 +3,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 const { withSentryConfig } = require('@sentry/nextjs');
 const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin');
-const withPlugins = require('next-compose-plugins');
 const i18n = require('./next-i18next.config');
 
 // @ts-check
@@ -14,10 +13,13 @@ const nextConfig = {
   ...i18n,
 };
 
-const configWithPlugins = withPlugins(
-  [createVanillaExtractPlugin(), withBundleAnalyzer],
-  nextConfig,
-);
+const configWithPlugins = (_phase, { defaultConfig }) => {
+  const plugins = [createVanillaExtractPlugin(), withBundleAnalyzer];
+  return plugins.reduce((acc, plugin) => plugin(acc), {
+    ...defaultConfig,
+    ...nextConfig,
+  });
+};
 
 const sentryWebpackPluginOptions = {
   // Additional config options for the Sentry Webpack plugin. Keep in mind that
