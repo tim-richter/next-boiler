@@ -48,7 +48,7 @@
 After cloning the project first time, run following command to install all dependencies:
 
 ```sh
-pnpm
+pnpm i
 ```
 
 ### Starting Dev Server
