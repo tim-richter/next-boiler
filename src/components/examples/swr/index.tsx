@@ -1,4 +1,3 @@
-import React from 'react';
 import { mutate } from 'swr';
 import { useRequest } from '@util';
 

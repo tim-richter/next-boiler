@@ -1,4 +1,3 @@
-import React from 'react';
 import { styledText } from '@components/Text/Text.css';
 import { RecipeVariants, WithChildren } from '@customTypes';
 

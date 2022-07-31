@@ -1,8 +1,8 @@
-import React from 'react';
+import { ReactNode } from 'react';
 import { RuntimeFn } from '@vanilla-extract/recipes/dist/declarations/src/types';
 import { NextSeoProps } from 'next-seo/lib/types';
 
-export type Children = React.ReactNode;
+export type Children = ReactNode;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type WithChildren<T = any> = T & { children?: Children };

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const TestingLibraryExample: React.FC<{ onClick: () => void }> = ({
   onClick,
 }) => {

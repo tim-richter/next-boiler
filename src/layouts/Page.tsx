@@ -1,4 +1,3 @@
-import React from 'react';
 import SEO from '@components/SEO';
 import { SEOMeta, WithChildren } from '@customTypes';
 import Footer from './Footer';

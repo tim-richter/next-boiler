@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 import { styledSelect, styledSelectLabel } from '@components/Select/Select.css';
 
 type Props = {
